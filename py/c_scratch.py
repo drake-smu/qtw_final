@@ -264,7 +264,6 @@ keep_vars = [i for i in range(imps.shape[0]) if imps[i] > imps.mean()]
 X_small = X[:,keep_vars].copy()
 
 
-
 rfc_s = RandomForestClassifier(n_estimators=300, n_jobs=-1, verbose=2)
 rfc_s_score = cross_val_score(
     rfc_s, X_small, y, cv=5, scoring=slater_loss, n_jobs=-1, verbose=1
